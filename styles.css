@@ -1,0 +1,66 @@
+#clockContainer {
+  position: relative;
+  margin: auto;
+  /* border: 2px solid red; */
+  /* background-color: red; */
+  height: 40vw;
+  width: 40vw;
+  /* height: 440px;
+  width: 440px; */
+
+  background: url(https://i.pinimg.com/736x/f9/36/c5/f936c5a35c35c3f4d7c498fb8edad0f1.jpg);
+  /* background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxhx6hfJtikA4Uk1domW5-ZC7g8f-dZheZqQ&s); */
+  background-size: 100%;
+}
+
+#hour,
+#minute,
+#second {
+  position: absolute;
+  background: black;
+  border-radius: 10px;
+}
+
+#hour {
+  width: 2%;
+  height: 17%;
+  top: 33.5%;
+  left: 49.5%;
+  opacity: 0.8;
+  transform-origin: bottom;
+  /* display: none; */
+}
+#minute {
+  width: 2%;
+  height: 29%;
+  top: 21%;
+  left: 49.5%;
+  opacity: 0.8;
+  transform-origin: bottom;
+  /* display: none; */
+}
+#second {
+  width: 1%;
+  height: 32%;
+  top: 18%;
+  left: 50%;
+  opacity: 0.8;
+  transform-origin: bottom;
+}
+index.js
+// learn - transform rotate property in DOM
+setInterval(() => {
+  let d = new Date();
+  let htime = d.getHours();
+  let mtime = d.getMinutes();
+  let stime = d.getSeconds();
+
+  let hrotation = 30 * htime + mtime / 2;
+  let mrotation = 6 * mtime;
+  let srotation = 6 * stime;
+
+  hour.style.transform = `rotate(${hrotation}deg)`;
+  minute.style.transform = `rotate(${mrotation}deg)`;
+  second.style.transform = `rotate(${srotation}deg)`;
+}, 1000);
+
