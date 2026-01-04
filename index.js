@@ -1,4 +1,4 @@
- setInterval(() => {
+  setInterval(() => {
   let d = new Date();
   let htime = d.getHours();
   let mtime = d.getMinutes();
